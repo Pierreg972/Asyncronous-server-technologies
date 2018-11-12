@@ -2,9 +2,9 @@
 
 ### Introduction
 
-This repository wil contain all the homeworks until the end of the semester.
-Every homework will be into directories named tp1, tp2, etc...
-You'll find another read me in every homework for the usage instructions
+* This repository wil contain all the homeworks until the end of the semester.
+* Every homework will be placed into directories named tp1, tp2, etc...
+* You'll find another read me in every homework for the usage instructions
 
 
 ### Installation instructions

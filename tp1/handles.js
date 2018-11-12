@@ -9,11 +9,47 @@ module.exports = {
 
         res.writeHead(200, {'Content-Type': 'text/plain'});
 
-        if (path === '/hello' && 'name' in params) {
-            res.write('Hello ' + params['name'])
-        } else {
-            res.write('Hello anonymous')
+        // switch (path, params['name']) {
+        //     case ['/hello', 'arthur']:
+        //         res.write('Hello ' + params['name'])
+        //         console.log('arthur')
+        //         break
+        //     case ['/',null]:
+        //         res.write('Text explanation')
+        //         console.log('juste /')
+        //         break
+        //     case['/hello','pierre']:
+        //         console.log('pierre')
+        //         res.write('Hello my name is Pierre. I am introducing myself')
+        //         break
+        //     default:
+        //         break
+        // }
+        if (path === '/hello') {
+            if('name' in params){
+                if(params['name'] === 'pierre'){
+                    res.write('Hello ' + params['name'] + "\nWelcome to your own dedicated page !" +
+                        "\nYear : ING5" +
+                        "\nGroup : BDA Grp 01" +
+                        "\nSports : tennis, squash, swimming")
+                } else{
+                    res.write('Hello ' + params['name'])
+                }
+            } else{
+                res.write('Hello anonymous')
+            }
+            res.end()
         }
-        res.end();
+        if(path === '/'){
+            res.write('Here is an explanation of what is doable on this site :\n' +
+                "- localhost:8080/ redirects you to this explanation\n" +
+                "- localhost:8080/hello prints 'Hello anonymous'\n" +
+                "- localhost:8080/hello?name=pierre prints some infos about the author\n" +
+                "- localhost:8080/hello?name=... prints 'Hello ...' if what follows name= is not pierre" )
+            res.end()
+        }
+        else{
+            res.end('404 - Not found !')
+        }
     }
 }
