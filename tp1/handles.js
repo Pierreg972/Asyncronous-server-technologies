@@ -9,22 +9,6 @@ module.exports = {
 
         res.writeHead(200, {'Content-Type': 'text/plain'});
 
-        // switch (path, params['name']) {
-        //     case ['/hello', 'arthur']:
-        //         res.write('Hello ' + params['name'])
-        //         console.log('arthur')
-        //         break
-        //     case ['/',null]:
-        //         res.write('Text explanation')
-        //         console.log('juste /')
-        //         break
-        //     case['/hello','pierre']:
-        //         console.log('pierre')
-        //         res.write('Hello my name is Pierre. I am introducing myself')
-        //         break
-        //     default:
-        //         break
-        // }
         if (path === '/hello') {
             if('name' in params){
                 if(params['name'] === 'pierre'){
